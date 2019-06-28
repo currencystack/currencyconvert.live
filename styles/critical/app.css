@@ -21,10 +21,10 @@
 
 :root {
   --mdc-theme-primary: #263238;
-  --mdc-theme-secondary: #00AE9E;
+  --mdc-theme-secondary: #0828D9;
   --mdc-theme-background: white;
 
-  --mm-accent-darker: #006064;
+  --mm-accent-darker: #020FC0;
   --mm-default-curve: cubic-bezier(0.4, 0, 0.2, 1);
   --mm-table-shade: #f0f0f0;
 }
