@@ -1,5 +1,5 @@
 {
-  "name": "Material Money",
+  "name": "CurrencyConvert",
   "short_name": "M Money",
   "manifest_version": 2,
   "description": "A fast, offline-friendly, Material Design-inspired currency converter.",

@@ -652,13 +652,8 @@ class App {
 
       this._model.rates.date.value = rateDate.toISOString().split('T', 1)[0];
 
-      this._model.rates.message.value = 'Rates updated ';
-      if (days === 0) {
-        this._model.rates.relative.value = 'today';
-      } else {
-        this._model.rates.relative.value =
-          `${days} day${days === 1 ? '' : 's'} ago`;
-      }
+      this._model.rates.message.value = 'Rates updated on ';
+      this._model.rates.relative.value = this._rates.last_update;
     }
   }
 

@@ -98,7 +98,7 @@ self.addEventListener('sync', (event) => {
           }
         })
         .then(() => {
-          registration.showNotification('Material Money', {
+          registration.showNotification('CurrencyConvert', {
             body: 'Currency rates updated.',
             icon: '/images/touch/icon-256x256.png',
             badge: '/images/touch/icon-256x256.png',
