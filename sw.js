@@ -15,7 +15,7 @@
  */
 
 const APP_CACHE = 'material-money-v9';
-const RATE_URL = '/rates';
+const RATE_URL = 'https://api.currencystack.io/currency?base=USD&target=AUD,BRL,GBP,BGN,CAD,CNY,HRK,CZK,DKK,EUR,HKD,HUF,INR,IDR,ILS,JPY,MYR,MXN,NZD,NOK,PHP,PLN,RON,RUB,SGD,ZAR,KRW,SEK,CHF,THB,TRY,USD,EGP&apikey=ffee214ec2ce27ccae0c282f5e25f36b';
 
 // Cached files
 const urlsToCache = [

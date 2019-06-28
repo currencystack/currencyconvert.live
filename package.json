@@ -33,7 +33,7 @@
     "del": "^3.0.0",
     "eslint": "^5.0.0",
     "eslint-config-google": "^0.9.1",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-babel": "^7.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^4.0.0",
@@ -56,5 +56,9 @@
   },
   "babel": {
     "only": "gulpfile.babel.js"
+  },
+  "dependencies": {
+    "gulp-connect": "^5.7.0",
+    "gulp-open": "^3.0.1"
   }
 }

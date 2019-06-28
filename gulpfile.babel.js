@@ -23,6 +23,8 @@ import cssnext from 'postcss-cssnext';
 
 import gulp from 'gulp';
 import shell from 'gulp-shell';
+import connect from 'gulp-connect';
+import open from 'gulp-open'
 import replace from 'gulp-replace';
 import htmlmin from 'gulp-htmlmin';
 import rev from 'gulp-rev';
@@ -73,6 +75,17 @@ const CSS_NANO = [
 ];
 
 const REV_MANIFEST = '.temp/rev-manifest.json';
+
+// Launch Chrome web browser
+// https://www.npmjs.com/package/gulp-open
+function openBrowser(done) {
+  var options = {
+    uri: 'http://localhost:8080'
+  };
+  return src('./')
+  .pipe(open(options));
+  done();
+}
 
 gulp.task('clean', () => del(['.temp', 'dist']));
 
@@ -175,10 +188,10 @@ gulp.task('webpack', (callback) => {
         }],
       },
       plugins: [
-        new MinifyPlugin({
+        /*new MinifyPlugin({
           simplify: false,
           mangle: false,
-        }),
+        }),*/
       ],
       output: {
         filename: 'scripts/[name].js',
@@ -310,9 +323,9 @@ gulp.task('deploy', gulp.series('build', () =>
 ));
 
 gulp.task('serve', gulp.series('build', () =>
-  gulp.src('dist').pipe(
-    shell('dev_appserver.py app.yaml', {
-      cwd: 'dist',
-    })
-  )
+  connect.server({
+    root: 'dist',
+    port: 8080,
+    debug: true,
+  })
 ));

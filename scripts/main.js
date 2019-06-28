@@ -121,7 +121,7 @@ class App {
       },
       currencies: new ModelEntry( /* Not bindable */ ),
       rates: {
-        date: new ModelEntry('rates.date'),
+        date: new ModelEntry('rates.last_update'),
         relative: new ModelEntry('rates.relative'),
         message: new ModelEntry('rates.message'),
       },
@@ -644,7 +644,8 @@ class App {
   _updateRateInfo() {
     if (this._rates) {
       const day = 24 * 60 * 60 * 1000;
-      const rateDate = new Date(`${this._rates.date}T00:00:00`);
+      console.log(this._rates);
+      const rateDate = new Date(this._rates.last_update);
       const daysToday = new Date().getTime() / day;
       const daysRates = rateDate.getTime() / day;
       const days = Math.floor(daysToday - daysRates);
@@ -732,7 +733,7 @@ class App {
    * @return {Promise.<Object>} The constructed promise.
    */
   _fetchRates(forceUpdate = false) {
-    const RATE_URL = '/rates';
+    const RATE_URL = 'https://api.currencystack.io/currency?base=USD&target=AUD,BRL,GBP,BGN,CAD,CNY,HRK,CZK,DKK,EUR,HKD,HUF,INR,IDR,ILS,JPY,MYR,MXN,NZD,NOK,PHP,PLN,RON,RUB,SGD,ZAR,KRW,SEK,CHF,THB,TRY,USD,EGP&apikey=ffee214ec2ce27ccae0c282f5e25f36b';
     const MESSAGE = 'Error getting rates.';
     const ACCEPTABLE_TIMEOUT = 5000;
 

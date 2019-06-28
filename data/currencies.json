@@ -30,5 +30,6 @@
   ["CHF", {"symbol":"Fr","name":"Swiss franc"}],
   ["THB", {"symbol":"฿","name":"Thai baht"}],
   ["TRY", {"symbol":"₺","name":"Turkish lira"}],
-  ["USD", {"symbol":"$","name":"United States dollar"}]
+  ["USD", {"symbol":"$","name":"United States dollar"}],
+  ["EGP", {"symbol":"£","name":"Egyptian pound"}]
 ]
