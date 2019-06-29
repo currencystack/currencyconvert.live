@@ -212,6 +212,7 @@
   flex-grow: 1;
   color: rgba(255, 255, 255, 0.8);
   margin-left: 8px;
+  font-size:0.8em;
 }
 
 .mm-convert__last-updated em {
