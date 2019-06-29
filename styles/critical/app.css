@@ -20,11 +20,11 @@
 @import "@material/button/dist/mdc.button.min.css";
 
 :root {
-  --mdc-theme-primary: #0b3de3;
+  --mdc-theme-primary: #011067;
   --mdc-theme-secondary: #020fc0;
   --mdc-theme-background: white;
 
-  --mm-accent-darker: #de7000;
+  --mm-accent-darker: #50a9b1;
   --mm-default-curve: cubic-bezier(0.4, 0, 0.2, 1);
   --mm-table-shade: #f0f0f0;
 }
