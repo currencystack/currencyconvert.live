@@ -80,7 +80,7 @@ function time2TimeAgo(ts) {
      return Math.floor(seconds/60) + " minutes ago";
   }
   if (seconds > 0 ) {
-    return Math.floor(seconds/60) + " a few seconds ago";
+    return " a few seconds ago";
  }
 }
 
