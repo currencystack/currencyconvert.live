@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "xyz.appmaker.rocvbw",
+      "sha256_cert_fingerprints": ["C4:04:DE:E3:88:ED:01:39:D7:56:DE:18:4C:45:CE:BF:21:B8:8E:60:A5:3A:4C:1D:8C:F7:04:EA:2B:A6:B8:B3"]
+    }
+  }
+]
