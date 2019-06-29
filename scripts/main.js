@@ -42,6 +42,44 @@ import WebFont from 'webfontloader';
 const FONT_TIMEOUT = 300;
 
 const EXTRA_STYLES = 'styles/styles.min.css';
+Date.prototype.getUnixTime = function() {
+return this.getTime()/1000|0;
+};
+if (!Date.now) Date.now = function() {
+return new Date();
+};
+Date.time = function() {
+return Date.now().getUnixTime();
+};
+
+function time2TimeAgo(ts) {
+  // This function computes the delta between the
+  // provided timestamp and the current time, then test
+  // the delta for predefined ranges.
+
+  var d=new Date();  // Gets the current time
+  var nowTs = Math.floor(d.getTime()/1000); // getTime() returns milliseconds, and we need seconds, hence the Math.floor and division by 1000
+  var seconds = nowTs-ts;
+
+  // more that two days
+  if (seconds > 2*24*3600) {
+     return "a few days ago";
+  }
+  // a day
+  if (seconds > 24*3600) {
+     return "yesterday";
+  }
+
+  if (seconds > 3600) {
+     return "a few hours ago";
+  }
+  if (seconds > 1800) {
+     return "Half an hour ago";
+  }
+  if (seconds > 60) {
+     return Math.floor(seconds/60) + " minutes ago";
+  }
+}
 
 /**
  * Formats a currency for display.
@@ -638,6 +676,8 @@ class App {
     return Math.round(conversion * 100) / 100;
   }
 
+
+
   /**
    * Updates the UI with the current rates.
    */
@@ -652,8 +692,10 @@ class App {
 
       this._model.rates.date.value = rateDate.toISOString().split('T', 1)[0];
 
-      this._model.rates.message.value = 'Rates updated on ';
-      this._model.rates.relative.value = this._rates.last_update;
+      this._model.rates.message.value = 'Rates last updated ';
+      let parsedUnixTime = new Date(this._rates.last_update).getUnixTime();
+
+      this._model.rates.relative.value = time2TimeAgo(parsedUnixTime);
     }
   }
 
